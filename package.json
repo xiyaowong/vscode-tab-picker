@@ -1,0 +1,71 @@
+{
+  "publisher": "xiyaowong",
+  "name": "tab-picker",
+  "displayName": "Tab Picker",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Simple tab picker for vscode",
+  "license": "MIT",
+  "homepage": "https://github.com/xiyaowong/vscode-tab-picker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiyaowong/vscode-tab-picker"
+  },
+  "bugs": {
+    "url": "https://github.com/xiyaowong/vscode-tab-picker/issues"
+  },
+  "categories": [
+    "Other"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "main": "./dist/index.js",
+  "icon": "res/icon.png",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "Tab Picker",
+      "properties": {}
+    },
+    "commands": []
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --external vscode",
+    "dev": "nr build --watch",
+    "lint": "eslint . --fix",
+    "vscode:prepublish": "nr build",
+    "publish": "vsce publish --no-dependencies",
+    "pack": "vsce package --no-dependencies",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && nr publish"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^0.21.9",
+    "@types/node": "^20.9.0",
+    "@types/picomatch": "^2.3.3",
+    "@types/vscode": "1.83.0",
+    "@vscode/vsce": "^2.22.0",
+    "@wongxy/eslint-config": "^0.0.21",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.57.0",
+    "esno": "^4.0.0",
+    "picomatch": "^3.0.1",
+    "pnpm": "^8.10.5",
+    "rimraf": "^5.0.5",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vitest": "^0.34.6"
+  }
+}
